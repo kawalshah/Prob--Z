@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- jquery file -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cn.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://kit.fontawesome.com/59d8afb937.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+    <title>Computer Networks</title>
+</head>
+
+<body>
+    <section class="section1">
+
+
+        <div class=" ques">
+            <div class="q1">
+                <i class="fa-solid fa-network-wired i1"></i>
+                <p class="head1">Computer Networks </p>
+                <div class="list">
+                    <ul>
+                        <li> <a onclick="ipD() "> Find all the Details of an IP:</a><br></li>
+                        <li> <a onclick="conversion()">Bin-Hex-Oct Conversions</a><br></li>
+                        <li> <a onclick="iptodec()">IP To Decimal</a><br></li>
+                        <li> <a onclick="ip6expand()">IPv6 Expand</a><br></li>
+                        <li> <a onclick="ip6compress()">IPv6 Compress</a><br></li>
+                        <!-- <li> <a onclick="equalip()">Ipv6 Adresses Equality</a><br></li> -->
+                        <li> <a onclick="is4s()"> Ipv4 Validity</a><br></li> 
+                         <li><a onclick="is6s()"> IPv6 Validity</a><br></li>
+                         <li><a onclick="isequal()"> Ipv6 Equality</a><br></li>
+                        <!-- <li> <a onclick="hostfun()">IP Hosting Details</a><br></li>  -->
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class=" ans">
+            <a href="/"> <i class="fa-solid fa-house-chimney" style="margin-left:90%; margin-top: 2%; color: white; font-size:2rem;"></i></a>
+            <a href="/"> <p style="margin-left:89.5%; margin-top: -2%; color: white; font-size:1.2rem;">Home</p></a>
+
+
+            <div id="ipDetails" class="form1">
+                <p style="font-size: 2rem; text-align:center; font-weight:bold;">Find all the Details of an IP:</p>
+                <form id="f1"  method="post" style="margin-left: 10%;">
+                    <label for="ip" style="font-size:1.3rem;"> Enter IP Address:</label><br>
+                    <input type="text" name="ip" id="ipf1" placeholder="IP Address" style="width: 50%;"><br>
+                    <label for="mask" style="font-size:1.3rem; margin-top:2%;">Enter Subnet Mask:</label><br>
+                    <input type="text" name="mask" id="maskf1" placeholder="Subnet Mask" style="width: 50%;">
+                    <button type="submit" class="bt" onclick="ipdetails()"> Submit</button>
+                </form>
+
+            </div>
+            
+            <div id="convert" class="form2">
+                <p style="font-size: 2rem; text-align:center; font-weight:bold;">Bin-Hex-Oct Conversions:</p>
+                <form id="f4" method="post"  style="margin-left: 10%;">
+
+                    <label for="cars" style="font-size:1.3rem; margin-top:1%;">Input From:</label>
+                    <label for="cars1" style="font-size:1.3rem; margin-top:1%; margin-left:21%;">Output To:</label><br>
+                    <select name="cars" id="cars">
+                      <option value="Decimal">Decimal</option>
+                      <option value="Binary">Binary</option>
+                      <option value="Hexadecimal">Hexadecimal</option>
+                      <option value="Octal">Octal</option>
+                    </select>
+                    <select name="cars1" style="margin-left: 20%;" id="cars1">
+                      <option value="Decimal">Decimal</option>
+                      <option value="Binary">Binary</option>
+                      <option value="Hexadecimal">Hexadecimal</option>
+                      <option value="Octal">Octal</option>
+                      </select><br>
+                    <label for="" style="font-size:1.3rem; margin-top:4%;">Enter the Input:</label><br>
+                    <input type="text" name="mask" id="maskf4" placeholder="Enter Input" style="width: 68%;"><br>
+                    <button type="submit" class="bt" onclick="binto()"> Convert</button>
+                </form>
+            </div>
+            <div id="ipdec" class="form2">
+                <p style="font-size: 2rem; text-align:center; font-weight:bold;">Convert IP Address To Decimal:</p>
+                <form id="f5" method="post" style="margin-left: 10%;">
+                    <label for="ip" style="font-size:1.3rem;"> Enter IP Address:</label><br>
+                    <input type="text" name="ip" id="ipf5" placeholder="IP Address" style="width: 50%;"><br>
+                    <button type="submit" class="bt" onclick="ip2dec()"> Submit</button>
+                </form>
+
+            </div>
+            
+
+            <div id="ip6com" class="form2">
+                <p style="font-size: 2rem; text-align:center; font-weight:bold;">IPv6 Compression Tool:</p>
+                <form id="f6"  method="post" style="margin-left: 10%;">
+                    <label for="domain" style="font-size:1.3rem;"> Enter IPv6 Address:</label><br>
+                    <input type="text" name="ip" id="ipf6" placeholder="IPv6 Address" style="width: 50%;"><br>
+
+                    <button type="submit" class="bt" onclick="compress()"> Compress</button>
+                </form>
+
+            </div>
+            <div id="ip6exp" class="form2">
+                <p style="font-size: 2rem; text-align:center; font-weight:bold;">IPv6 Expansion Tool:</p>
+                <form id="f7" method="post" style="margin-left: 10%;">
+                    <label for="do" style="font-size:1.3rem;"> Enter IPv6 Address:</label><br>
+                    <input type="text" name="ip" value="2001:db8:85a3::8a2e:370:7334" id="ipf7" placeholder="IPv6 Address" style="width: 50%;"><br>
+
+                    <button type="submit" class="bt" onclick="expand()"> Expand</button>
+                </form>
+
+            </div>
+            <div id="hosting" class="form2">
+                <p style="font-size: 2rem; text-align:center; font-weight:bold;">IP Hosting Details:</p>
+                <form id="f8" method="post" style="margin-left: 10%;">
+                    <label for="domain" style="font-size:1.3rem;"> Enter IP Address:</label><br>
+                    <input type="text" name="ip" id="ipf8" placeholder="IP Address" style="width: 50%;"><br>
+
+                    <button type="submit" class="bt" onclick="hostt()"> Submit</button>
+                </form>
+
+            </div>
+            <div id="is4" class="form2">
+                <p style="font-size: 2rem; text-align:center; font-weight:bold;">Check if your Ipv4 is valid or not</p>
+                <form id="f9" method="post" style="margin-left: 10%;">
+                    <label for="ip" style="font-size:1.3rem;"> Enter Ipv4 Address:</label><br>
+                    <input type="text" name="ip" id="ipf9" placeholder="IP Address" style="width: 50%;"><br>
+                    <button type="submit" class="bt" onclick="is4ss()"> Submit</button>
+                </form>
+
+            </div>
+            <div id="is6" class="form2">
+                <p style="font-size: 2rem; text-align:center; font-weight:bold;">Check if your Ipv6 is valid or not</p>
+                <form id="f10" method="post" style="margin-left: 10%;">
+                    <label for="ip" style="font-size:1.3rem;"> Enter Ipv6 Address:</label><br>
+                    <input type="text" name="ip" id="ipf10" placeholder="IP Address" style="width: 50%;"><br>
+                    <button type="submit" class="bt" onclick="is6ss()"> Submit</button>
+                </form>
+
+            </div>
+            <div id="equal" class="form2">
+                <p style="font-size: 2rem; text-align:center; font-weight:bold;">Check if your Ipv6 addresses are Equal</p>
+                <form id="f11" method="post" style="margin-left: 10%;">
+                    <label for="ip" style="font-size:1.3rem;"> Enter 1st Ipv6 Address:</label><br>
+                    <input type="text" name="ip" id="ipf11" placeholder="IP Address" style="width: 50%;"><br>
+                    <label for="mask" style="font-size:1.3rem; margin-top:2%;">Enter 2nd Ipv6 Address:</label><br>
+                    <input type="text" name="mask" id="maskf11" placeholder="Subnet Mask" style="width: 50%;">
+                    <button type="submit" class="bt" onclick="issequal()"> Submit</button>
+                </form>
+            </div>
+            
+            <div id="result" class="ans1 detail">
+                <p style="color: #00132c; font-size:2rem; font-weight:500;"> Result:</p>
+                <p id="reslt" style="color: #00132c; font-size:1.2rem;"></p>
+                <p id="reslt1" style="color: #00132c; font-size:1.5rem; text-align:center; font-weight:600;"></p>
+
+            </div>
+
+
+            <div id="hostd" class="detail ans1">
+                <table style="margin-top: 5%; width: 100%;" class="iptable" border="1px solid">
+                    <tr style="border: 1px solid;">
+                        <th>Detail</th>
+                        <th>Result</th>
+                    </tr>
+                    <tr>
+                        <td>Organisation</td>
+                        <td>192.168.1.1</td>
+
+                    </tr>
+                    <tr style="border: 1px solid;">
+                        <td>ISP </td>
+                        <td>192.168.1.1</td>
+
+                    </tr>
+                    <tr style="border: 1px solid;">
+                        <td>Continent</td>
+                        <td>192.168.1.1</td>
+
+                    </tr>
+                    <tr style="border: 1px solid;">
+                        <td>Country</td>
+                        <td>192.168.1.1</td>
+
+                    </tr>
+                    <tr style="border: 1px solid;">
+                        <td>State</td>
+                        <td>192.168.1.1</td>
+
+                    </tr>
+                    <tr style="border: 1px solid;">
+                        <td>City</td>
+                        <td>192.168.1.1</td>
+
+                    </tr>
+
+                </table>
+            </div>
+
+
+
+            <div id="ipans" class="detail">
+                <table style="margin-top: 5%; width: 100%;" class="iptable" border="1px solid">
+                    <tr style="border: 1px solid;">
+                        <th>Detail</th>
+                        <th>Result</th>
+                    </tr>
+                    <tr>
+                        <td>IP-Address</td>
+                        <td id="disp_f1_ip">abc</td>
+
+                    </tr>
+                    <tr style="border: 1px solid;">
+                        <td>Subnet </td>
+                        <td id="disp_f1_sub">192.168.1.1</td>
+
+                    </tr>
+                    <tr style="border: 1px solid;">
+                        <td>Network</td>
+                        <td id="disp_f1_network">192.168.1.1</td>
+
+                    </tr>
+                    <tr style="border: 1px solid;">
+                        <td>Broadcast</td>
+                        <td id="disp_f1_broad">192.168.1.1</td>
+
+                    </tr>
+                    <tr style="border: 1px solid;">
+                        <td>Number of Hosts</td>
+                        <td id="disp_f1_host">192.168.1.1</td>
+
+                    </tr>
+                    <tr style="border: 1px solid;">
+                        <td>Number of Usable Hosts</td>
+                        <td id="disp_f1_usable">192.168.1.1</td>
+
+                    </tr>
+                    <tr style="border: 1px solid;">
+                        <td>Class</td>
+                        <td id="disp_f1_class">192.168.1.1</td>
+
+                    </tr>
+                    <tr style="border: 1px solid;">
+                        <td>Wild Card</td>
+                        <td id="disp_f1_wild">192.168.1.1</td>
+
+                    </tr>
+                </table>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <script>
+        var ipd = document.getElementById("ipDetails");
+        var ipa = document.getElementById("ipans");
+        var conv = document.getElementById("convert");
+        var dec = document.getElementById("ipdec");
+        var ip6comprs = document.getElementById("ip6com");
+        var ip6expnd = document.getElementById("ip6exp");
+        var hostd = document.getElementById("hosting");
+        var res = document.getElementById("result");
+        var hosttd = document.getElementById("hostd");
+        var is4 = document.getElementById("is4");
+        var is6 = document.getElementById("is6");
+        var equal = document.getElementById("equal");
+
+        equal.style.display="none";
+        ipa.style.display = "none";
+        conv.style.display = "none";
+        dec.style.display = "none";
+        ip6comprs.style.display = "none";
+        ip6expnd.style.display = "none";
+        hostd.style.display = "none";
+        is6.style.display="none";
+        is4.style.display="none";
+        res.style.display = "none";
+        hosttd.style.display = "none";
+        
+
+        function ipD() {
+            window.scrollTo(0, 0);
+            equal.style.display="none";
+            ipd.style.display = "block";
+            ipa.style.display = "none";
+            conv.style.display = "none";
+            dec.style.display = "none";
+            is6.style.display="none";
+            is4.style.display="none";
+            ip6comprs.style.display = "none";
+            ip6expnd.style.display = "none";
+            hostd.style.display = "none";
+            res.style.display = "none";
+            hosttd.style.display = "none";
+            
+        }
+
+        
+
+       
+        function binto() {
+            res.style.display = "block";
+            var f4=document.getElementById("f4");
+            f4.addEventListener('submit',(e)=>{
+                var cars=document.getElementById("cars").value;
+                var cars1=document.getElementById("cars1").value;
+                var mask=document.getElementById("maskf4").value;
+                $.post("/convert", {cars:cars,cars1:cars1,mask:mask},(data,status)=>{
+                    var out=data[0].data;
+                    // console.log(out);
+                    document.getElementById("reslt").innerHTML = cars +" to "+ cars1 +" conversion of "+mask+" is:";
+                    document.getElementById("reslt1").innerHTML = out;
+                });
+
+                e.preventDefault();
+            })
+        }
+
+        function ip2dec() {
+            res.style.display = "block";
+            var f5=document.getElementById("f5");
+            f5.addEventListener('submit',(e)=>{
+                var ip=document.getElementById("ipf5").value;
+                 $.post("/i2i", {ip:ip},(data,status)=>{
+                    var out=data[0].data;
+                    document.getElementById("reslt").innerHTML = "Decimal Conversion of Ip address "+ip+" is:";
+                    document.getElementById("reslt1").innerHTML = out;
+                });
+
+                e.preventDefault();
+            })
+        }
+
+        
+        function compress() {
+            res.style.display = "block";
+            var f6=document.getElementById("f6");
+            f6.addEventListener('submit',(e)=>{
+                var ip=document.getElementById("ipf6").value;
+
+                 $.post("/compress", {ip:ip},(data,status)=>{
+                    var out=data[0].data;
+                    document.getElementById("reslt").innerHTML = "Compressed form of "+ip+" is:";
+                    document.getElementById("reslt1").innerHTML = out;
+                });
+
+                e.preventDefault();
+            })
+        }
+        function expand() {
+            res.style.display = "block";
+            var f7=document.getElementById("f7");
+            f7.addEventListener('submit',(e)=>{
+                var ip=document.getElementById("ipf7").value;
+                
+                 $.post("/expand", {ip:ip},(data,status)=>{
+                    var out=data[0].data;
+                    document.getElementById("reslt").innerHTML = "Expanded form of "+ip+" is:";
+                    document.getElementById("reslt1").innerHTML = out;
+                });
+
+                e.preventDefault();
+            })
+        }
+
+        function is4ss() {
+            res.style.display = "block";
+            var f9=document.getElementById("f9");
+            f9.addEventListener('submit',e=>{
+                var ip=document.getElementById("ipf9").value;
+                // console.log(ip);
+                
+                $.post("/is4", {ip:ip},(data,status)=>{
+                    var out=data[0].data;
+                    document.getElementById("reslt").innerHTML="";
+                    if(out){
+                        document.getElementById("reslt1").innerHTML = "This is a correct ip address";
+                    }else{
+                        document.getElementById("reslt1").innerHTML = "This is not correct ip address";
+                    }
+                });
+                e.preventDefault();
+            })
+           
+        }
+        function is6ss() {
+            res.style.display = "block";
+            var f10=document.getElementById("f10");
+            f10.addEventListener('submit',e=>{
+                var ip=document.getElementById("ipf10").value;
+                $.post("/is6", {ip:ip},(data,status)=>{
+                    var out=data[0].data;
+                    // console.log(out);
+                    document.getElementById("reslt").innerHTML="";
+                    if(out===true){
+                        document.getElementById("reslt1").innerHTML = "This is a correct ip address. You can see expension and compression tools also.";
+                    }else{
+                        document.getElementById("reslt1").innerHTML = "This is not correct ip address";
+                    }
+                });
+                e.preventDefault();
+                
+            })
+           
+        }
+        function issequal() {
+            res.style.display = "block";
+            var f11=document.getElementById("f11");
+            f11.addEventListener('submit',e=>{
+                var ip=document.getElementById("ipf11").value;
+                var mask=document.getElementById("maskf11").value;
+                $.post("/equal", {ip:ip,mask:mask},(data,status)=>{
+                    var out=data[0].data;
+                     console.log(out);
+                     document.getElementById("reslt").innerHTML="";
+                     if(out){
+                        document.getElementById("reslt1").innerHTML = "These addresses are equal. You can verify by expending or compressiong both of them";
+                    }else{
+                        document.getElementById("reslt1").innerHTML = "These addresses are not equal";
+                    } 
+                });
+                e.preventDefault();
+                
+            })
+           
+        }
+
+
+        function hostt() {
+            hosttd.style.display = "block";
+            var f8=document.getElementById("f8");
+            f8.addEventListener('submit',(e)=>{
+                var ip=document.getElementById("ipf8").value;
+                $.post("/hostdetail", {ip:ip},(data,status)=>{
+                    var out=data[0].data;
+                });
+                e.preventDefault();
+            })
+        }
+        
+        
+
+
+        function ipdetails() {
+            var f1=document.getElementById("f1");
+            f1.addEventListener('submit',(e)=>{
+                var ip=document.getElementById("ipf1").value;
+                var mask=document.getElementById("maskf1").value;
+                
+                $.post("/ipdetail", {ip:ip,mask:mask},(data,status)=>{
+                    
+                    var out=data[0].data;
+                    document.getElementById("disp_f1_ip").innerHTML=out.ipadr;
+                    document.getElementById("disp_f1_sub").innerHTML=out.sub;
+                    document.getElementById("disp_f1_network").innerHTML=out.network;
+                    document.getElementById("disp_f1_broad").innerHTML=out.broadcast;
+                    document.getElementById("disp_f1_host").innerHTML=out.no_of_host;
+                    document.getElementById("disp_f1_usable").innerHTML=out.valid_host;
+                    document.getElementById("disp_f1_class").innerHTML=out.class;
+                    document.getElementById("disp_f1_wild").innerHTML=out.wild;
+                    
+                });
+
+                e.preventDefault();
+            })
+            ipa.style.display = "block";
+            ipd.style.marginTop = "0";
+            res.style.display = "none";
+            hosttd.style.display = "none";
+            
+        }
+        
+
+        function is4s(){
+            window.scrollTo(0, 0);
+            equal.style.display="none";
+            is6.style.display="none";
+            is4.style.display="block";
+            ipd.style.display = "none";
+            ipa.style.display = "none";
+            dec.style.display = "none";
+            conv.style.display = "none";
+            ip6comprs.style.display = "none";
+            ip6expnd.style.display = "none";
+            hostd.style.display = "none";
+            res.style.display = "none";
+            hosttd.style.display = "none";
+        }
+        function is6s(){
+            window.scrollTo(0, 0);
+            equal.style.display="none";
+            is6.style.display="block";
+            is4.style.display="none";
+            ipd.style.display = "none";
+            ipa.style.display = "none";
+            dec.style.display = "none";
+            conv.style.display = "none";
+            ip6comprs.style.display = "none";
+            ip6expnd.style.display = "none";
+            hostd.style.display = "none";
+            res.style.display = "none";
+            hosttd.style.display = "none";
+        }
+        function isequal(){
+            window.scrollTo(0, 0);
+            equal.style.display="block";
+            is6.style.display="none";
+            is4.style.display="none";
+            ipd.style.display = "none";
+            ipa.style.display = "none";
+            dec.style.display = "none";
+            conv.style.display = "none";
+            ip6comprs.style.display = "none";
+            ip6expnd.style.display = "none";
+            hostd.style.display = "none";
+            res.style.display = "none";
+            hosttd.style.display = "none";
+        }
+
+        function conversion() {
+            window.scrollTo(0, 0);
+            equal.style.display="none";
+            is6.style.display="none";
+            is4.style.display="none";
+            ipd.style.display = "none";
+            ipa.style.display = "none";
+            dec.style.display = "none";
+            conv.style.display = "block";
+            ip6comprs.style.display = "none";
+            ip6expnd.style.display = "none";
+            hostd.style.display = "none";
+            res.style.display = "none";
+            hosttd.style.display = "none";
+            
+        }
+
+        function iptodec() {
+            window.scrollTo(0, 0);
+            equal.style.display="none";
+            is6.style.display="none";
+            is4.style.display="none";
+            ipd.style.display = "none";
+            ipa.style.display = "none";
+            conv.style.display = "none";
+            dec.style.display = "block";
+            ip6comprs.style.display = "none";
+            ip6expnd.style.display = "none";
+            hostd.style.display = "none";
+            res.style.display = "none";
+            hosttd.style.display = "none";
+            
+        }
+
+        function compat() {
+            window.scrollTo(0, 0);
+            equal.style.display="none";
+            is6.style.display="none";
+            is4.style.display="none";
+            ipd.style.display = "none";
+            ipa.style.display = "none";
+            conv.style.display = "none";
+            dec.style.display = "none";
+            comp.style.display = "block";
+            ip6comprs.style.display = "none";
+            ip6expnd.style.display = "none";
+            hostd.style.display = "none";
+            res.style.display = "none";
+            hosttd.style.display = "none";
+            
+        }
+
+        function ip6compress() {
+            window.scrollTo(0, 0);
+            equal.style.display="none";
+            is6.style.display="none";
+            is4.style.display="none";
+            ipd.style.display = "none";
+            ipa.style.display = "none";
+            conv.style.display = "none";
+            dec.style.display = "none";
+            ip6comprs.style.display = "block";
+            ip6expnd.style.display = "none";
+            hostd.style.display = "none";
+            res.style.display = "none";
+            hosttd.style.display = "none";
+            
+        }
+
+        function ip6expand() {
+            window.scrollTo(0, 0);
+            equal.style.display="none";
+            is6.style.display="none";
+            is4.style.display="none";
+            ipd.style.display = "none";
+            ipa.style.display = "none";
+            conv.style.display = "none";
+            dec.style.display = "none";
+            ip6comprs.style.display = "none";
+            ip6expnd.style.display = "block";
+            hostd.style.display = "none";
+            res.style.display = "none";
+            hosttd.style.display = "none";
+            
+        }
+
+        function hostfun() {
+            window.scrollTo(0, 0);
+            equal.style.display="none";
+            is6.style.display="none";
+            is4.style.display="none";
+            ipd.style.display = "none";
+            ipa.style.display = "none";
+            conv.style.display = "none";
+            dec.style.display = "none";
+            ip6comprs.style.display = "none";
+            ip6expnd.style.display = "none";
+            hostd.style.display = "block";
+            res.style.display = "none";
+            hosttd.style.display = "none";
+            
+        }
+        function myip() {
+            window.scrollTo(0, 0);
+            equal.style.display="none";
+            is6.style.display="none";
+            is4.style.display="none";
+            ipd.style.display = "none";
+            ipa.style.display = "none";
+            conv.style.display = "none";
+            dec.style.display = "none";
+            ip6comprs.style.display = "none";
+            ip6expnd.style.display = "none";
+            hostd.style.display = "none";
+            res.style.display = "none";
+            hosttd.style.display = "none";
+            myipp.style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>

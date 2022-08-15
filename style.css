@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #f7f9f9 !important;
+    overflow-x: hidden;
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #00132c; /* Set a background color */
+    color: white; /* Text color */
+    width: 50px;
+    height: 50px;
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 100%; /* Rounded corners */
+     /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: white; /* Add a dark-grey background on hover */
+    color:#00132c;
+    font-weight: bolder;
+  }
+
+.banner_bg {
+    position: absolute;
+    margin-top: -9.8%;
+    height: 120%;
+    width: 110%;
+    z-index: -1;
+}
+
+svg {
+    width: 30vw;
+    height: auto;
+    padding: 20vh 0vw 3vh 0vw;
+}
+
+.activee {
+    background-color: #0b8d96 !important;
+    width: 100%;
+    color: #f7f9f9 !important;
+}
+
+.grad {
+    background: linear-gradient(black, #2c558a);
+    height: 56px;
+    width: 100%;
+    opacity: 0.5
+}
+
+
+/* moving letters */
+
+.ml9 {
+    margin-left: 15%;
+    position: relative;
+    font-weight: 700;
+    font-size: 7.5em;
+    color: #f7f9f9;
+    padding-top: 25vh;
+}
+
+.ml9 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+}
+
+.ml9 .letter {
+    transform-origin: 50% 100%;
+    display: inline-block;
+    line-height: 1em;
+}
+
+.header p {
+    margin-left: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #f7f9f9;
+    font-family: sans-serif;
+    font-size: 1.2vw;
+    letter-spacing: 2px;
+    text-align: left;
+    margin-right: 5%;
+}
+
+.section2 {
+    padding-top: 5%;
+    margin-top: 30vh;
+    color: #00132c;
+    background-color: #f7f9f9;
+    overflow: hidden;
+}
+
+.section2 h1 {
+    color: #022757;
+}
+
+.section2 .row {
+    /* justify-content: center;
+    justify-items: center; */
+    margin-left: 8%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.txt {
+    margin-top: 8vh;
+}
+
+
+/* 
+.section2 img {
+    height: 30%;
+    width: 30%;
+} */
+
+.phone {
+    display: none;
+}
+
+.section2 button {
+    padding-top: 30px;
+    padding: 15px;
+    color: #f7f9f9;
+    background-color: #02224f;
+    border-radius: 30px;
+    margin-top: 20px;
+    border: none;
+    font-weight: bold;
+    transition: ease-in;
+}
+
+.section3 {
+    padding: 7% 12% 15%;
+}
+
+.contact-form {
+    padding-top: 15%;
+}
+
+.section2 button:hover {
+    color: #02224f;
+    background-color: #f7f9f9;
+    border-width: 10px;
+    border-color: #f7f9f9;
+    border-radius: 30px;
+    box-shadow: 0 2px 1px 0 rgba(4, 84, 75, 0.158), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.footer {
+    text-align: center;
+    padding-top: 3%;
+    position: relative;
+    bottom: 0;
+    margin-left: 0;
+}
+
+.footer-image {
+    margin-right: 10px;
+}
+
+.last:hover {
+    color: red;
+}
+
+.footer-image {
+    margin: 5px 15px;
+}
+
+.face:hover {
+    color: #3d799c;
+}
+
+.in:hover {
+    color: #f21f82;
+}
+
+.tw:hover {
+    color: #229ff2;
+}
+
+.mail:hover {
+    color: red;
+}
+
+.large-header {
+    position: relative;
+    width: 100%;
+    background: #333;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 1020px) {
+    .section2 .row {
+        justify-content: center;
+        justify-items: center;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+    .header p {
+        font-size: 2em;
+        margin: auto;
+    }
+    .txt {
+        margin-top: 8vh;
+        font-size: 2em;
+    }
+    /* .section2 img {
+        height: 60%;
+        width: 60%;
+    } */
+    .section2 {
+        padding-top: 10vh;
+        margin-top: 5vh;
+        margin-bottom: 15vh;
+    }
+    .ml9 {
+        padding-top: 10vh !important;
+        margin-top: 3vh;
+    }
+    .phone {
+        display: block !important;
+    }
+    .desk {
+        margin-top: -50%;
+    }
+    svg {
+        width: 50vw;
+        height: auto;
+        padding-top: 4%;
+        margin: 0vh 25vw !important;
+    }
+}

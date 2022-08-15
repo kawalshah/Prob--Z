@@ -1,5 +1,5 @@
 #ProbZ
-https://probzy.herokuapp.com/
+https://prob-z.netlify.app/
 
 Now go to our app and solve your problems related to:
 
